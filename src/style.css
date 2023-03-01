@@ -501,6 +501,15 @@ main {
     opacity: 0.7;
   }
 }
+#size {
+  padding: 1rem;
+  border: none;
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 1rem;
+  height: 4rem;
+  font-weight: bold;
+}
+
 .overlay {
   position: absolute;
   display: none;
@@ -576,6 +585,17 @@ main {
   top: 1%;
   cursor: pointer;
   right: 10%;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  gap: 2rem;
+}
+.add button {
+  flex: 1;
 }
 
 @keyframes image {
@@ -747,6 +767,12 @@ main {
     border-radius: 0;
     object-fit: cover;
   }
+  #size {
+    width: 40%;
+    text-align: center;
+    font-size: 1.4rem;
+    height: 5rem;
+  }
   .menu {
     width: 50%;
     background-color: white;
@@ -817,6 +843,15 @@ main {
     width: 100%;
     align-items: center;
   }
+  .add {
+    width: 100%;
+  }
+  .add button {
+    height: 5rem;
+  }
+  .add #size {
+    font-size: 2rem;
+  }
   .navLeft {
     display: none;
   }
@@ -886,6 +921,9 @@ main {
   }
   .infoCont:last-child {
     gap: 1.5rem;
+  }
+  main {
+    gap: 3.9rem;
   }
 }
 

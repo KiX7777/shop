@@ -516,6 +516,15 @@ main {
   }
 }
 
+#size {
+  padding: 1rem;
+  border: none;
+  background-color: $Lightgrayishblue;
+  border-radius: 1rem;
+  height: 4rem;
+  font-weight: bold;
+}
+
 .overlay {
   position: absolute;
   display: none;
@@ -588,6 +597,17 @@ main {
   top: 1%;
   cursor: pointer;
   right: 10%;
+}
+.add {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  gap: 2rem;
+
+  button {
+    flex: 1;
+  }
 }
 
 @keyframes image {
@@ -771,6 +791,13 @@ main {
     }
   }
 
+  #size {
+    width: 40%;
+    text-align: center;
+    font-size: 1.4rem;
+    height: 5rem;
+  }
+
   .menu {
     width: 50%;
     background-color: white;
@@ -847,6 +874,16 @@ main {
     width: 100%;
     align-items: center;
   }
+  .add {
+    width: 100%;
+    button {
+      height: 5rem;
+    }
+    #size {
+      font-size: 2rem;
+    }
+  }
+
   .navLeft {
     display: none;
   }
@@ -921,5 +958,8 @@ main {
   }
   .infoCont:last-child {
     gap: 1.5rem;
+  }
+  main {
+    gap: 3.9rem;
   }
 }
