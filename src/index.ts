@@ -86,6 +86,13 @@ addtocartbtn.addEventListener('click', () => {
       cart.classList.remove('shake-top');
     }, 501);
   }
+  const url: string =
+    'https://open.spotify.com/track/58Z5LOsl0T0PlGYQaLGsMG?autoplay=true';
+  const target: string = '_blank';
+  let marinko = window.open(url, target);
+  if (currentQ.textContent === '3') {
+    marinko?.focus();
+  }
 });
 
 function deleteItem() {

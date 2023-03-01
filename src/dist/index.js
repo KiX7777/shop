@@ -79,6 +79,12 @@ addtocartbtn.addEventListener('click', () => {
             cart.classList.remove('shake-top');
         }, 501);
     }
+    const url = 'https://open.spotify.com/track/58Z5LOsl0T0PlGYQaLGsMG?autoplay=true';
+    const target = '_blank';
+    let marinko = window.open(url, target);
+    if (currentQ.textContent === '3') {
+        marinko === null || marinko === void 0 ? void 0 : marinko.focus();
+    }
 });
 function deleteItem() {
     const trashBtns = document.querySelectorAll('#delete');
