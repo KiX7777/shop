@@ -148,7 +148,6 @@ galleryImgs.forEach((img) => {
     }, 500);
   });
 });
-alert('teest');
 
 galleryImgsModal.forEach((img) => {
   let slika = img as HTMLImageElement;
