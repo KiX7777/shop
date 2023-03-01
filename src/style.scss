@@ -936,7 +936,7 @@ main {
 
   .left,
   .right {
-    display: block;
+    display: flex;
     z-index: 10;
   }
   .left,
