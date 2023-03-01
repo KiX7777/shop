@@ -126,14 +126,15 @@ galleryImgs.forEach((img) => {
         galleryImgsModal[Number(id) - 1].classList.add('active');
         mainPic.classList.add('imageAnim');
         modalPic.classList.add('imageAnim');
-        mainPic.setAttribute('src', `/images/air_jordan_${id}.webp`);
-        modalPic.setAttribute('src', `/images/air_jordan_${id}.webp`);
+        mainPic.setAttribute('src', `images/air_jordan_${id}.webp`);
+        modalPic.setAttribute('src', `images/air_jordan_${id}.webp`);
         setTimeout(() => {
             mainPic.classList.remove('imageAnim');
             modalPic.classList.remove('imageAnim');
         }, 500);
     });
 });
+alert('teest');
 galleryImgsModal.forEach((img) => {
     let slika = img;
     let id = slika.dataset.id;
