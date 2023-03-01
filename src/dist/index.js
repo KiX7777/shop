@@ -156,8 +156,8 @@ galleryImgsModal.forEach((img) => {
     });
 });
 right.addEventListener('click', () => {
-    mainPic.classList.add('imageAnim');
-    modalPic.classList.add('imageAnim');
+    mainPic.classList.add('imageAnimL');
+    modalPic.classList.add('imageAnimL');
     currentpic++;
     if (currentpic > 4) {
         currentpic = 1;
@@ -165,8 +165,8 @@ right.addEventListener('click', () => {
     mainPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
     modalPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
     setTimeout(() => {
-        mainPic.classList.remove('imageAnim');
-        modalPic.classList.remove('imageAnim');
+        mainPic.classList.remove('imageAnimL');
+        modalPic.classList.remove('imageAnimL');
     }, 500);
     galleryImgs.forEach((image) => image.classList.remove('active'));
     galleryImgs[Number(currentpic) - 1].classList.add('active');
@@ -174,8 +174,8 @@ right.addEventListener('click', () => {
     console.log(currentpic);
 });
 left.addEventListener('click', () => {
-    mainPic.classList.add('imageAnimL');
-    modalPic.classList.add('imageAnimL');
+    mainPic.classList.add('imageAnim');
+    modalPic.classList.add('imageAnim');
     currentpic--;
     if (currentpic < 1) {
         currentpic = 4;
