@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <script type="module" defer src="/dist/index.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <img src="/images/icons8-close-50.png" alt="" class="closemenu" />
+      <a href="#" class="link">Collections</a>
+      <a href="#" class="link">Men</a>
+      <a href="#" class="link">Women</a>
+      <a href="#" class="link">About</a>
+      <a href="#" class="link">Contact</a>
+    </div>
+    <nav>
+      <div class="cartContainer closeCart">
+        <span>Cart</span>
+        <div class="cartProducts">
+          <p class="emptymsg">Your cart is empty</p>
+          <!-- <div class="productCard">
+            <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+            <div class="cardTxt">
+              <p class="productTitle">Fall Limited Edition Sneakers</p>
+              <div class="cartPrices">
+                <p class="productCardPrice">$125.00 x 3</p>
+                <p class="productCardTotal">$375.00</p>
+              </div>
+            </div>
+            <img src="/images/icon-delete.svg" id="delete" alt="" />
+          </div> -->
+          <!-- <div class="productCard">
+            <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+            <div class="cardTxt">
+              <p class="productTitle">Fall Limited Edition Sneakers</p>
+              <div class="cartPrices">
+                <p class="productCardPrice">$125.00 x 3</p>
+                <p class="productCardTotal">$375.00</p>
+              </div>
+            </div>
+            <img src="/images/icon-delete.svg" id="delete" alt="" />
+          </div>
+          <div class="productCard">
+            <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+            <div class="cardTxt">
+              <p class="productTitle">Fall Limited Edition Sneakers</p>
+              <div class="cartPrices">
+                <p class="productCardPrice">$125.00 x 3</p>
+                <p class="productCardTotal">$375.00</p>
+              </div>
+            </div>
+            <img src="/images/icon-delete.svg" id="delete" alt="" />
+          </div>
+          <div class="productCard"> -->
+
+          <button type="button" id="checkout">Checkout</button>
+        </div>
+      </div>
+
+      <ul class="navLeft">
+        <img
+          src="/images/icons8-menu-rounded-30.png"
+          alt=""
+          class="hamburger"
+        />
+        <img src="/images/logo.svg" alt="" class="logo" />
+
+        <li>
+          <a href="#" class="link">Collections</a>
+        </li>
+        <li>
+          <a href="#" class="link">Men</a>
+        </li>
+        <li>
+          <a href="#" class="link">Women</a>
+        </li>
+        <li>
+          <a href="#" class="link">About</a>
+        </li>
+        <li>
+          <a href="#" class="link">Contact</a>
+        </li>
+      </ul>
+      <ul class="navRight">
+        <div class="cart">
+          <img src="/images/icon-cart.svg" alt="cart logo" id="cart" />
+          <span id="incart"></span>
+        </div>
+        <img
+          src="/images/image-avatar.png"
+          alt="profile picture"
+          id="profilepic"
+        />
+      </ul>
+    </nav>
+    <main>
+      <div class="overlay"></div>
+
+      <div class="imageCont">
+        <div class="mainPic">
+          <span class="left"
+            ><img src="/images/icon-previous.svg" alt=""
+          /></span>
+          <span class="right"><img src="/images/icon-next.svg" alt="" /></span>
+          <img src="/images/air_jordan_1.webp" alt="" />
+        </div>
+        <div class="gallery">
+          <img src="/images/thumb_1.jpg" class="active" data-id="1" alt="" />
+          <img src="/images/thumb_2.jpg" class="" data-id="2" alt="" />
+          <img src="/images/thumb_3.jpg" data-id="3" alt="" />
+          <img src="/images/thumb_4.jpg" data-id="4" alt="" />
+        </div>
+      </div>
+      <div class="imageCont modal">
+        <img
+          src="/images/icons8-close-window-50.png"
+          alt=""
+          class="closeIcon"
+        />
+        <div class="mainPic">
+          <img src="/images/image-product-1.jpg" alt="" />
+        </div>
+        <div class="gallery gallerymodal">
+          <img src="/images/thumb_1.jpg" class="active" data-id="1" alt="" />
+          <img src="/images/thumb_2.jpg" class="" data-id="2" alt="" />
+          <img src="/images/thumb_3.jpg" data-id="3" alt="" />
+          <img src="/images/thumb_4.jpg" data-id="4" alt="" />
+        </div>
+      </div>
+      <div class="infoCont">
+        <div class="titleCont">
+          <span class="brand">NIKE AIR</span>
+          <h2>NIKE Air Jordan 1 MID SE</h2>
+        </div>
+        <div class="description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </div>
+        <div class="pricesCont">
+          <div class="current">
+            <p class="currPrice">€125.00</p>
+            <span class="discount">50%</span>
+          </div>
+          <p class="oldPrice">€250.00</p>
+        </div>
+        <div class="buttons">
+          <div class="quantity">
+            <button id="minus">
+              <img src="/images/icon-minus.svg" alt="" />
+            </button>
+            <p class="currentquantity">0</p>
+            <button id="plus">
+              <img src="/images/icon-plus.svg" alt="" />
+            </button>
+          </div>
+          <button class="addtocart">
+            <img src="/images/icon-cart.svg" alt="" />Add to cart
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
