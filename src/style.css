@@ -682,7 +682,7 @@ main {
     height: auto;
     padding: 0;
     max-height: 100vh;
-    gap: 1rem;
+    gap: 5.9rem;
     overflow: hidden;
     display: grid;
     grid-template-rows: 1fr 2fr;
@@ -754,6 +754,7 @@ main {
     font-size: 1.8rem;
     align-self: baseline;
     margin-left: 1rem;
+    font-weight: bold;
     text-decoration: none;
     color: black;
   }
