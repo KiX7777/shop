@@ -80,18 +80,18 @@ addtocartbtn.addEventListener('click', () => {
     cartobj.push(obj);
     console.log(total);
     animQuantity();
-    quantity = 0;
-    currentQ.textContent = '0';
     setTimeout(() => {
       cart.classList.remove('shake-top');
     }, 501);
-  }
-  const url: string =
-    'https://open.spotify.com/track/58Z5LOsl0T0PlGYQaLGsMG?autoplay=true';
-  const target: string = '_blank';
-  let marinko = window.open(url, target);
-  if (currentQ.textContent === '3') {
-    marinko?.focus();
+    if (currentQ.textContent === '3') {
+      const url: string =
+        'https://open.spotify.com/track/58Z5LOsl0T0PlGYQaLGsMG?autoplay=true';
+      const target: string = '_blank';
+      let marinko = window.open(url, target);
+      marinko?.focus();
+    }
+    quantity = 0;
+    currentQ.textContent = '0';
   }
 });
 
