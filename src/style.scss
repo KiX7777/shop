@@ -230,10 +230,7 @@ main {
     color: $Darkgrayishblue;
   }
 }
-.left,
-.right {
-  display: none;
-}
+
 .cartPrices {
   @include flex;
   width: 100%;
@@ -535,13 +532,14 @@ main {
 .left,
 .right {
   display: block;
+  z-index: 10;
 }
 .left,
 .right {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
-  z-index: 1000;
+  z-index: 44;
   align-items: center;
   justify-content: center;
   object-fit: cover;
@@ -681,6 +679,12 @@ main {
   transform: scale(0.98);
 }
 
+.left,
+.right {
+  // display: none;
+  top: 40%;
+}
+
 @media (max-width: 420px) {
   body {
     width: 100vw;
@@ -768,6 +772,7 @@ main {
     transform: translateX(-100%);
     align-items: center;
     padding: 2rem 0;
+    z-index: 50;
     // justify-content: space-evenly;
     // justify-content: center;
     gap: 5rem;
@@ -809,7 +814,7 @@ main {
     }
   }
   .infoCont:last-child {
-    gap: 1rem;
+    gap: 3rem;
   }
   .quantity {
     height: 5rem;
@@ -874,10 +879,30 @@ main {
   #delete {
     width: 2rem;
   }
+
+  .left,
+  .right {
+    display: block;
+    z-index: 10;
+  }
+  .left,
+  .right {
+    top: 50%;
+    left: 3rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .right {
+    left: initial;
+    right: 3rem;
+  }
 }
 
 @media (max-height: 700px) {
   html {
     font-size: 55.5%;
+  }
+  .infoCont:last-child {
+    gap: 1.5rem;
   }
 }

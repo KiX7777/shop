@@ -26,6 +26,7 @@ const currPrice = document.querySelector('.currPrice');
 let quantity = 0;
 let total = 0;
 let cartobj = [];
+let currentpic = 1;
 console.log(mainPic.getAttribute('src'));
 cart.addEventListener('click', () => {
     cartCont.classList.toggle('openCart');
@@ -125,6 +126,8 @@ galleryImgs.forEach((img) => {
         galleryImgsModal.forEach((img) => img.classList.remove('active'));
         galleryImgs[Number(id) - 1].classList.add('active');
         galleryImgsModal[Number(id) - 1].classList.add('active');
+        currentpic = Number(id);
+        console.log(currentpic);
         mainPic.classList.add('imageAnim');
         modalPic.classList.add('imageAnim');
         mainPic.setAttribute('src', `images/air_jordan_${id}.webp`);
@@ -143,6 +146,39 @@ galleryImgsModal.forEach((img) => {
         galleryImgs[Number(id) - 1].classList.add('active');
         galleryImgsModal[Number(id) - 1].classList.add('active');
     });
+});
+right.addEventListener('click', () => {
+    mainPic.classList.add('imageAnim');
+    modalPic.classList.add('imageAnim');
+    currentpic++;
+    if (currentpic > 4) {
+        currentpic = 1;
+    }
+    mainPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
+    modalPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
+    setTimeout(() => {
+        mainPic.classList.remove('imageAnim');
+        modalPic.classList.remove('imageAnim');
+    }, 500);
+    galleryImgs.forEach((image) => image.classList.remove('active'));
+    galleryImgs[Number(currentpic) - 1].classList.add('active');
+    galleryImgsModal[Number(currentpic) - 1].classList.add('active');
+    console.log(currentpic);
+});
+left.addEventListener('click', () => {
+    mainPic.classList.add('imageAnim');
+    modalPic.classList.add('imageAnim');
+    currentpic--;
+    if (currentpic < 1) {
+        currentpic = 4;
+    }
+    mainPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
+    modalPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
+    setTimeout(() => {
+        mainPic.classList.remove('imageAnim');
+        modalPic.classList.remove('imageAnim');
+    }, 500);
+    console.log(currentpic);
 });
 function animQuantity() {
     currentQ.classList.add('slide-in-blurred-left');
