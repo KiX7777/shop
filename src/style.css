@@ -558,7 +558,11 @@ main {
 }
 
 .imageAnim {
-  animation: image 300ms ease;
+  animation: image 300ms ease-out forwards;
+}
+
+.imageAnimL {
+  animation: imageL 300ms ease-out forwards;
 }
 
 .modal .mainPic,
@@ -578,6 +582,16 @@ main {
   from {
     opacity: 0.3;
     transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes imageL {
+  from {
+    opacity: 0.3;
+    transform: translateX(100%);
   }
   to {
     opacity: 1;

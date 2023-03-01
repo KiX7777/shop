@@ -174,8 +174,8 @@ right.addEventListener('click', () => {
     console.log(currentpic);
 });
 left.addEventListener('click', () => {
-    mainPic.classList.add('imageAnim');
-    modalPic.classList.add('imageAnim');
+    mainPic.classList.add('imageAnimL');
+    modalPic.classList.add('imageAnimL');
     currentpic--;
     if (currentpic < 1) {
         currentpic = 4;
@@ -184,6 +184,7 @@ left.addEventListener('click', () => {
     modalPic.setAttribute('src', `images/air_jordan_${currentpic}.webp`);
     setTimeout(() => {
         mainPic.classList.remove('imageAnim');
+        mainPic.classList.remove('imageAnimL');
         modalPic.classList.remove('imageAnim');
     }, 500);
     console.log(currentpic);
