@@ -34,6 +34,13 @@ console.log(mainPic.getAttribute('src'));
 
 cart.addEventListener('click', () => {
   cartCont.classList.toggle('openCart');
+  if (cartCont.classList.contains('openCart')) {
+    left.style.display = 'none';
+    right.style.display = 'none';
+  } else {
+    left.style.display = 'flex';
+    right.style.display = 'flex';
+  }
 });
 
 addtocartbtn.addEventListener('click', () => {
