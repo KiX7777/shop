@@ -12,7 +12,7 @@ const plus = document.getElementById('plus');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const incart = document.getElementById('incart');
-const mainPic = document.querySelector('.mainPic img');
+const mainPic = document.querySelector('#mainpic');
 const overlaymainPic = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const modal = document.querySelector('.modal');
@@ -26,6 +26,7 @@ const currPrice = document.querySelector('.currPrice');
 let quantity = 0;
 let total = 0;
 let cartobj = [];
+console.log(mainPic.getAttribute('src'));
 cart.addEventListener('click', () => {
     cartCont.classList.toggle('openCart');
 });
@@ -35,7 +36,7 @@ addtocartbtn.addEventListener('click', () => {
     card.classList.add('productCard');
     card.dataset.quant = `${currentQ.textContent}`;
     card.innerHTML = `
-  <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+  <img src="images/thumb_1.jpg" alt="" />
   <div class="cardTxt">
     <p class="productTitle">NIKE Air Jordan 1</p>
     <div class="cartPrices">
@@ -43,7 +44,7 @@ addtocartbtn.addEventListener('click', () => {
       <p class="productCardTotal">€${Number((_b = currPrice.textContent) === null || _b === void 0 ? void 0 : _b.slice(1)) * Number(currentQ.textContent)}</p>
     </div>
   </div>
-  <img src="/images/icon-delete.svg" id="delete" alt="" />
+  <img src="images/icon-delete.svg" id="delete" alt="" />
   `;
     if (currentQ.textContent === '0') {
         return;
@@ -126,8 +127,8 @@ galleryImgs.forEach((img) => {
         galleryImgsModal[Number(id) - 1].classList.add('active');
         mainPic.classList.add('imageAnim');
         modalPic.classList.add('imageAnim');
-        mainPic.setAttribute('src', `/images/air_jordan_${id}.webp`);
-        modalPic.setAttribute('src', `/images/air_jordan_${id}.webp`);
+        mainPic.setAttribute('src', `images/air_jordan_${id}.webp`);
+        modalPic.setAttribute('src', `images/air_jordan_${id}.webp`);
         setTimeout(() => {
             mainPic.classList.remove('imageAnim');
             modalPic.classList.remove('imageAnim');
@@ -150,6 +151,7 @@ function animQuantity() {
     }, 301);
 }
 function openModal() {
+    console.log('test');
     overlay.style.animation = 'overlay 400ms ease';
     overlay.style.display = 'block';
     modal.style.display = 'flex';

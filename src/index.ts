@@ -12,7 +12,7 @@ const plus = document.getElementById('plus') as HTMLButtonElement;
 const left = document.querySelector('.left') as HTMLSpanElement;
 const right = document.querySelector('.right') as HTMLSpanElement;
 const incart = document.getElementById('incart') as HTMLSpanElement;
-const mainPic = document.querySelector('.mainPic img') as HTMLImageElement;
+const mainPic = document.querySelector('#mainpic') as HTMLImageElement;
 const overlaymainPic = document.querySelector('.modal') as HTMLImageElement;
 const overlay = document.querySelector('.overlay') as HTMLDivElement;
 const modal = document.querySelector('.modal') as HTMLDivElement;
@@ -29,6 +29,8 @@ let quantity = 0;
 let total: number = 0;
 let cartobj: object[] = [];
 
+console.log(mainPic.getAttribute('src'));
+
 cart.addEventListener('click', () => {
   cartCont.classList.toggle('openCart');
 });
@@ -38,7 +40,7 @@ addtocartbtn.addEventListener('click', () => {
   card.classList.add('productCard');
   card.dataset.quant = `${currentQ.textContent}`;
   card.innerHTML = `
-  <img src="/images/image-product-1-thumbnail.jpg" alt="" />
+  <img src="images/thumb_1.jpg" alt="" />
   <div class="cardTxt">
     <p class="productTitle">NIKE Air Jordan 1</p>
     <div class="cartPrices">
@@ -50,7 +52,7 @@ addtocartbtn.addEventListener('click', () => {
       }</p>
     </div>
   </div>
-  <img src="/images/icon-delete.svg" id="delete" alt="" />
+  <img src="images/icon-delete.svg" id="delete" alt="" />
   `;
 
   if (currentQ.textContent === '0') {
@@ -139,9 +141,9 @@ galleryImgs.forEach((img) => {
     mainPic.classList.add('imageAnim');
     modalPic.classList.add('imageAnim');
     // mainPic.setAttribute('src', `/images/image-product-${id}.jpg`);
-    mainPic.setAttribute('src', `./images/air_jordan_${id}.webp`);
+    mainPic.setAttribute('src', `images/air_jordan_${id}.webp`);
     // modalPic.setAttribute('src', `/images/image-product-${id}.jpg`);
-    modalPic.setAttribute('src', `./images/air_jordan_${id}.webp`);
+    modalPic.setAttribute('src', `images/air_jordan_${id}.webp`);
     setTimeout(() => {
       mainPic.classList.remove('imageAnim');
       modalPic.classList.remove('imageAnim');
@@ -166,6 +168,7 @@ function animQuantity(): void {
   }, 301);
 }
 function openModal() {
+  console.log('test');
   overlay.style.animation = 'overlay 400ms ease';
   overlay.style.display = 'block';
   modal.style.display = 'flex';
