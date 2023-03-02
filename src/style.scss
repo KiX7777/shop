@@ -747,6 +747,13 @@ main {
   .hamburger {
     display: block;
   }
+
+  option {
+    color: black;
+    text-decoration: none;
+    text-decoration-style: none;
+  }
+
   .closemenu {
     align-self: baseline;
     margin-left: 1rem;
