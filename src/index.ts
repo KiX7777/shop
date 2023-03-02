@@ -19,6 +19,7 @@ const modal = document.querySelector('.modal') as HTMLDivElement;
 const closeModal = document.querySelector('.closeIcon') as HTMLImageElement;
 const modalPic = modal.querySelector('.mainPic img') as HTMLDivElement;
 const side = document.querySelector('.menu') as HTMLDivElement;
+const size = document.getElementById('size') as HTMLSelectElement;
 const galleryImgs = document.querySelectorAll('.gallery img');
 const galleryImgsModal = document.querySelectorAll('.gallerymodal img');
 const currentQ = document.querySelector(
@@ -29,8 +30,6 @@ let quantity = 0;
 let total: number = 0;
 let cartobj: object[] = [];
 let currentpic = 1;
-
-console.log(mainPic.getAttribute('src'));
 
 cart.addEventListener('click', () => {
   cartCont.classList.toggle('openCart');
@@ -50,7 +49,10 @@ addtocartbtn.addEventListener('click', () => {
   card.innerHTML = `
   <img src="images/thumb_1.jpg" alt="" />
   <div class="cardTxt">
-    <p class="productTitle">NIKE Air Jordan 1</p>
+    <p class="productTitle">NIKE Air Jordan 1
+    <span class="chosenSize">${size.value}<span>
+
+    </p>
     <div class="cartPrices">
       <p class="productCardPrice">€${currPrice.textContent?.slice(1)} x ${
     currentQ.textContent
@@ -59,8 +61,8 @@ addtocartbtn.addEventListener('click', () => {
         Number(currPrice.textContent?.slice(1)) * Number(currentQ.textContent)
       }</p>
     </div>
-  </div>
-  <img src="images/icon-delete.svg" id="delete" alt="" />
+    </div>
+    <img src="images/icon-delete.svg" id="delete" alt="" />
   `;
 
   if (currentQ.textContent === '0') {
@@ -92,6 +94,7 @@ addtocartbtn.addEventListener('click', () => {
     }
     quantity = 0;
     currentQ.textContent = '0';
+    size.value = '40';
   }
 });
 
@@ -194,7 +197,6 @@ right.addEventListener('click', () => {
   galleryImgs.forEach((image) => image.classList.remove('active'));
   galleryImgs[Number(currentpic) - 1].classList.add('active');
   galleryImgsModal[Number(currentpic) - 1].classList.add('active');
-  console.log(currentpic);
 });
 left.addEventListener('click', () => {
   mainPic.classList.add('imageAnim');
@@ -220,7 +222,6 @@ function animQuantity(): void {
   }, 301);
 }
 function openModal() {
-  console.log('test');
   overlay.style.animation = 'overlay 400ms ease';
   overlay.style.display = 'block';
   modal.style.display = 'flex';
@@ -237,7 +238,6 @@ if (!mql.matches) {
   right.style.display = 'none';
 }
 if (mql.matches) {
-  console.log('test');
   mainPic.removeEventListener('click', openModal);
 }
 

@@ -19,6 +19,7 @@ const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.closeIcon');
 const modalPic = modal.querySelector('.mainPic img');
 const side = document.querySelector('.menu');
+const size = document.getElementById('size');
 const galleryImgs = document.querySelectorAll('.gallery img');
 const galleryImgsModal = document.querySelectorAll('.gallerymodal img');
 const currentQ = document.querySelector('.currentquantity');
@@ -27,7 +28,6 @@ let quantity = 0;
 let total = 0;
 let cartobj = [];
 let currentpic = 1;
-console.log(mainPic.getAttribute('src'));
 cart.addEventListener('click', () => {
     cartCont.classList.toggle('openCart');
     if (cartCont.classList.contains('openCart')) {
@@ -47,13 +47,16 @@ addtocartbtn.addEventListener('click', () => {
     card.innerHTML = `
   <img src="images/thumb_1.jpg" alt="" />
   <div class="cardTxt">
-    <p class="productTitle">NIKE Air Jordan 1</p>
+    <p class="productTitle">NIKE Air Jordan 1
+    <span class="chosenSize">${size.value}<span>
+
+    </p>
     <div class="cartPrices">
       <p class="productCardPrice">€${(_a = currPrice.textContent) === null || _a === void 0 ? void 0 : _a.slice(1)} x ${currentQ.textContent}</p>
       <p class="productCardTotal">€${Number((_b = currPrice.textContent) === null || _b === void 0 ? void 0 : _b.slice(1)) * Number(currentQ.textContent)}</p>
     </div>
-  </div>
-  <img src="images/icon-delete.svg" id="delete" alt="" />
+    </div>
+    <img src="images/icon-delete.svg" id="delete" alt="" />
   `;
     if (currentQ.textContent === '0') {
         return;
@@ -84,6 +87,7 @@ addtocartbtn.addEventListener('click', () => {
         }
         quantity = 0;
         currentQ.textContent = '0';
+        size.value = '40';
     }
 });
 function deleteItem() {
@@ -177,7 +181,6 @@ right.addEventListener('click', () => {
     galleryImgs.forEach((image) => image.classList.remove('active'));
     galleryImgs[Number(currentpic) - 1].classList.add('active');
     galleryImgsModal[Number(currentpic) - 1].classList.add('active');
-    console.log(currentpic);
 });
 left.addEventListener('click', () => {
     mainPic.classList.add('imageAnim');
@@ -202,7 +205,6 @@ function animQuantity() {
     }, 301);
 }
 function openModal() {
-    console.log('test');
     overlay.style.animation = 'overlay 400ms ease';
     overlay.style.display = 'block';
     modal.style.display = 'flex';
@@ -218,7 +220,6 @@ if (!mql.matches) {
     right.style.display = 'none';
 }
 if (mql.matches) {
-    console.log('test');
     mainPic.removeEventListener('click', openModal);
 }
 overlay.addEventListener('click', () => {

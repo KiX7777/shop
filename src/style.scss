@@ -681,6 +681,16 @@ main {
     // background-color: white;
   }
 }
+
+.productTitle {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  span {
+    margin-bottom: 0;
+  }
+}
 .addtocart {
   display: flex;
   height: 4rem;
